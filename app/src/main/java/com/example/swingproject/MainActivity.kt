@@ -1,4 +1,4 @@
-package com.example.swingproject
+package com.example.swingproject.ui.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
