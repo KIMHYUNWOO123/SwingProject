@@ -24,6 +24,10 @@ Unsplash API 공식 문서 : https://unsplash.com/documentation#search-photos
 + Coroutine
 + Flow
 
+## 버전
+min SDK 24
+target SDK 34
+complie SDK 34
 
 
 
