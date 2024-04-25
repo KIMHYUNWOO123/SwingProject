@@ -22,6 +22,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -91,6 +92,9 @@ fun FeedView(
             Spacer(modifier = Modifier.fillMaxHeight(0.02f))
             OutlinedTextField(
                 value = text, onValueChange = { setValue.invoke(it) },
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                  textColor = Color.Black
+                ),
                 enabled = true,
                 label = { Icon(imageVector = Icons.Default.Search, contentDescription = null, modifier = Modifier.background(Color.Transparent)) },
                 placeholder = { Text(text = "search for Photos") },
