@@ -6,10 +6,10 @@ import com.example.domain.entity.PhotoData
 
 @Database(
     entities = [PhotoData::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
-abstract class Database : RoomDatabase() {
+abstract class PhotoDB : RoomDatabase() {
 
     abstract fun photoDao(): PhotoDao
 }

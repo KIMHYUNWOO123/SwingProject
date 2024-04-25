@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="loading_bar">#FF699C</color>
+    <color name="bookmark_bg">#F7CFDC</color>
+    <color name="main_bg1">#A1AABEFF</color>
+    <color name="main_bg2">#FFAF96</color>
+    <color name="main_bg3">#FF89B0</color>
 </resources>
