@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
                 if (System.currentTimeMillis() - backPressedTime <= 2000L) {
                     (context as Activity).finish()
                 } else {
-                    Toast.makeText(context, "한 번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.back_btn_txt, Toast.LENGTH_SHORT).show()
                 }
                 backPressedTime = System.currentTimeMillis()
             }
@@ -67,14 +67,14 @@ class MainActivity : ComponentActivity() {
                                     ),
                                     selected = item.route == currentRoute,
                                     onClick = {
-                                        if (currentRoute == Screen.BOOKMARK_VIEW) {
-                                            navController.navigate(route = item.route) {
-                                                popUpTo(Screen.MAIN_ROUTE) {
-                                                    inclusive = true
+                                        if (item.route != currentRoute) {
+                                            if (currentRoute == Screen.BOOKMARK_VIEW) {
+                                                navController.navigate(route = item.route) {
+                                                    popUpTo(Screen.MAIN_ROUTE)
                                                 }
+                                            } else {
+                                                navController.navigate(route = item.route)
                                             }
-                                        } else {
-                                            navController.navigate(route = item.route)
                                         }
                                     },
                                     icon = { Icon(imageVector = item.icon, contentDescription = item.name, modifier = Modifier.size(26.dp)) },

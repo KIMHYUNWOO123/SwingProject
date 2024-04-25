@@ -27,7 +27,7 @@ class BookmarkViewModel @Inject constructor(
     fun deletePhoto(id: String) {
         isLoading.postValue(true)
         viewModelScope.launch(Dispatchers.IO + CoroutineExceptionHandler { _, t ->
-            Log.d("BookmarkViewModel", "deletePhoto: ${t.message}")
+            Log.d("Error", "BookmarkViewModel - deletePhoto(): ${t.message}")
         }) {
             localUseCase.deletePhoto(id)
         }.invokeOnCompletion {

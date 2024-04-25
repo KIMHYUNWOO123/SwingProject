@@ -36,7 +36,7 @@ class FeedViewModel @Inject constructor(
     )
     fun getPhotos(query: String) {
         viewModelScope.launch(Dispatchers.IO + CoroutineExceptionHandler { _, t ->
-            Log.d("FeedViewModel", "getPhotos: ${t.message}")
+            Log.d("Error", "FeedViewModel - getPhotos(): ${t.message}")
         }) {
             remoteUseCase.getPhotos(query, BuildConfig.api_key).cachedIn(viewModelScope).collectLatest {
                 _photoPagingData.value = it
@@ -49,7 +49,7 @@ class FeedViewModel @Inject constructor(
     }
     fun insertPhoto(photoData: PhotoData) {
         viewModelScope.launch(Dispatchers.IO + CoroutineExceptionHandler { _, t ->
-            Log.d("FeedViewModel", "insertPhoto: ${t.message}")
+            Log.d("Error", "FeedViewModel - insertPhoto(): ${t.message}")
         }) {
             localUseCase.insertPhoto(photoData = photoData)
         }
@@ -57,7 +57,7 @@ class FeedViewModel @Inject constructor(
 
     fun deletePhoto(id: String) {
         viewModelScope.launch(Dispatchers.IO + CoroutineExceptionHandler { _, t ->
-            Log.d("FeedViewModel", "deletePhoto: ${t.message}")
+            Log.d("Error", "FeedViewModel - deletePhoto(): ${t.message}")
         }) {
             localUseCase.deletePhoto(id)
         }
